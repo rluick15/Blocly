@@ -2,6 +2,7 @@ package io.bloc.android.blocly.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import io.bloc.android.blocly.BloclyApplication;
@@ -16,6 +17,9 @@ public class BloclyActivity extends Activity {
         Toast.makeText(this,
                 BloclyApplication.getSharedDataSource().getFeeds().get(0).getTitle(),
                 Toast.LENGTH_LONG).show();
+
+        TextView mainText = (TextView) findViewById(R.id.mainText);
+        mainText.setText(BloclyApplication.getSharedDataSource().getFeeds().get(0).getTitle());
     }
 
 }
